@@ -1,0 +1,1 @@
+function greeter(person: string) :string {return person+ 'Hello'}

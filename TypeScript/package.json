@@ -1,0 +1,12 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "play typescript",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc", // 编译
+    "build:w": "tsc -w" // 监听文件，有变动即编译
+  },
+  "author": "Asterwen",
+  "license": "ISC"
+}
