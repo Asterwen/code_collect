@@ -1,6 +1,6 @@
 <template>
   <div class="testFunc">
-
+    <p>getMe</p>
   </div>
 </template>
 
