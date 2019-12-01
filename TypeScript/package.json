@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "knowtypescript",
   "version": "1.0.0",
   "description": "learning TypeScript fast",
@@ -12,4 +13,16 @@
   "devDependencies": {
     "typescript": "^3.6.4"
   }
+=======
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "play typescript",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc", // 编译
+    "build:w": "tsc -w" // 监听文件，有变动即编译
+  },
+  "author": "Asterwen",
+  "license": "ISC"
+>>>>>>> 44aad20a77cb328227cda29d3b44b0d9dbff4ce7
 }
