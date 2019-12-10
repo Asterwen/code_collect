@@ -1,4 +1,19 @@
 {
+<<<<<<< HEAD
+  "name": "knowtypescript",
+  "version": "1.0.0",
+  "description": "learning TypeScript fast",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.6.4"
+  }
+=======
   "name": "typescript",
   "version": "1.0.0",
   "description": "play typescript",
@@ -9,4 +24,5 @@
   },
   "author": "Asterwen",
   "license": "ISC"
+>>>>>>> 44aad20a77cb328227cda29d3b44b0d9dbff4ce7
 }
