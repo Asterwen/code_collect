@@ -200,11 +200,42 @@ width: calc(100% / (100px / 2));  注意计算符号前后加空格
                     }
                 }
 
-# 圣杯布局 待续
+# 圣杯布局 和双飞翼布局 本职上是一样的 就是元素包裹不一样 
+圣杯布局 有共同的 container
+双飞翼 是分开的
+
+# 伪类和 伪元素
 
 
+伪元素 有 ::before, ::after, ::first-line, ::first-letter, ::selection, ::placeholder  
 
 
+# css 画图形
+/* 半圆 */
+.half-circle{
+    height: 50px;
+    border-radius: 50px 50px 0 0;
+}
+/* 扇形 */
+.sector{
+    border-radius: 100px 0 0;
+}
+/* 三角 */
+.triangle{
+    width: 0px;
+    height: 0px;
+    background: none;
+    border: 50px solid red;
+    border-color: red transparent transparent transparent;
+}
+/* 梯形 */
+.ladder{
+    width: 50px;
+    height: 0px;
+    background: none;
+    border: 50px solid red;
+    border-color: red transparent transparent transparent;
+}
 
 
 
