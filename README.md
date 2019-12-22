@@ -237,9 +237,35 @@ width: calc(100% / (100px / 2));  注意计算符号前后加空格
     border-color: red transparent transparent transparent;
 }
 
+# 防抖
+function debounce(fn, delay){
+  let timer = null
+  return function(){
+    timer = setTimeout(timer)
+    timer = setTimeout(() => {
+      fn.apply(this, arguments)
+    }, delay)
+  }
+}
 
-
-
+# 节流
+function throttle(fn, cycle){
+  let start = Date.now()
+  let now
+  let timer
+  return function(){
+    now = Date.now()
+    clearTimeout(timer)
+    if(now - start >= cycle){
+      fn.apply(this, arguments)
+      start = now
+    }else{
+      timer = setTimeout(() => {
+        fn.apply(this, arguments)
+      }, cycle)
+    }
+  }
+}
 
 
 
