@@ -7,43 +7,132 @@
     <title>源码分析</title>
 </head>
 <body>
-    
-
+        <style>
+                body{
+                    min-width: 650px;
+                }
+                div{
+                    height: 200px;
+                }
+                #container{
+                    padding-left: 200px;
+                    padding-right: 150px;
+                }
+                #container .column{
+                    float: left;
+                }
+                #center{
+                    width: 100%;
+                    background-color: red;
+                }
+                #left{
+                    width: 200px;
+                    margin-left: -100%;
+                    position: relative;
+                    right: 200px;
+                    background-color: green;
+                }
+                #right{
+                    width: 150px;
+                    margin-right: -150px;
+                    background-color: aqua;
+                }
+                </style>
+                <div id="container">
+                    <div id="center" class="column">center</div>
+                    <div id="left" class="column">left</div>
+                    <div id="right" class="column">right</div>
+                </div>
+                
 </body>
 <script>
-Function.prototype.mybind = function(thisArg){
-    if(typeof this !== 'function'){
-        throw TypeError('Bind must be called on a function')
-    }
-
-    const args = Array.prototype.slice.call(arguments, 1),
-        self = this,
-        nop = function() {},
-        bound = function(){
-
-            return self.apply(
-                this instanceof nop ? this : thisArg,
-                args.concat(Array.prototype.slice.call(arguments, 1))
-
-            )
+var list = document.getElementsByTagName('li')
+for(var i=0; i< list.length; i++){
+    list[i].addEventListener('click',function(i){
+        return function(){
+            alert(i+1)
         }
-        if(this.prototype){
-            nop.prototype = this.prototype;
-        }
-        bound.prototype = new nop();
-        return bound
-}
-const bar = function(){
-    console.log(this.name, arguments)
+    }(i),true)
 }
 
-bar.prototype.name = 'bar'
-const foo = {
-    name: 'foo'
+
+function Foo(name, age){
+    this.name = name
 }
-const bound = bar.mybind(foo, 22, 33, 44);
-new bound()
-bound()
+Foo.prototype.alertName = function() {
+    console.log(this.name)
+}
+// 创建示例
+var f = new Foo('Aster')
+f.printName = function () {
+  console.log(this.name)
+}
+
+f.toString()
+
+
+// 测试
+// f.printName()
+// f.alertName()
+
+// var item;
+// for (item in f){
+//     console.log('k'+item)
+//     if(f.hasOwnProperty(item)){
+//         console.log('l'+item)
+//     }
+// }
+
+
+
+// Function.prototype.mybind = function(thisArg){
+//     if(typeof this !== 'function'){
+//         throw TypeError('Bind must be called on a function')
+//     }
+
+//     const args = Array.prototype.slice.call(arguments, 1),
+//         self = this,
+//         nop = function() {},
+//         bound = function(){
+
+//             return self.apply(
+//                 this instanceof nop ? this : thisArg,
+//                 args.concat(Array.prototype.slice.call(arguments, 1))
+
+//             )
+//         }
+//         if(this.prototype){
+//             nop.prototype = this.prototype;
+//         }
+//         bound.prototype = new nop();
+//         return bound
+// }
+// const bar = function(){
+//     console.log(this.name, arguments)
+// }
+
+// bar.prototype.name = 'bar'
+// const foo = {
+//     name: 'foo'
+// }
+// const bound = bar.mybind(foo, 22, 33, 44);
+// new bound()
+// bound()
+
+// console.log('_proto_属性 ===========')
+// var obj = {}
+// obj.a = 100
+// var arr = []
+// arr.a = 100
+// function fn() {}
+// fn.a = 100
+
+// console.log(obj.__proto__)
+// console.log(arr.__proto__)
+// console.log(fn.__proto__)
+// console.log('prototype属性===========')
+// console.log(fn.prototype)
+// console.log(obj.__proto__ === Object.prototype)
 
 </script>
 </html>
